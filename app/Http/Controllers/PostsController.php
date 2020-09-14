@@ -74,6 +74,7 @@ class PostsController extends Controller
       $post->body = $request->body;
       $post->user_id = $user->id;
 
+
       $user->posts()->save($post);
       // $post->save();
 
@@ -83,6 +84,7 @@ class PostsController extends Controller
 
           $image = new Image();
           //ファイル名取得
+          $image->binary = base64_encode(file_get_contents($e['image']->getRealPath()));
           $filename = $user->id."_".$nowtime."_".$e['image']->getClientOriginalName();
           // storage/app/publicにファイルを保存する
           // $request->file('file')->store('public');
@@ -92,6 +94,8 @@ class PostsController extends Controller
           $image->file_name= $filename;
           $image->path = '/storage/'.$filename;
           $post->path = '/storage/'.$filename;
+          $post->binary = base64_encode(file_get_contents($e['image']->getRealPath()));
+
 
           $image->post_id = $post->id;
           $post->images()->save($image);
@@ -159,6 +163,7 @@ class PostsController extends Controller
 
           $image = new Image();
           //ファイル名取得
+          $image->binary = base64_encode(file_get_contents($e['image']->getRealPath()));
           $filename = $user->id."_".$nowtime."_".$e['image']->getClientOriginalName();
           // storage/app/publicにファイルを保存する
           // $request->file('file')->store('public');
@@ -168,6 +173,7 @@ class PostsController extends Controller
           $image->file_name= $filename;
           $image->path = '/storage/'.$filename;
           $post->path = '/storage/'.$filename;
+          $post->binary = base64_encode(file_get_contents($e['image']->getRealPath()));
 
           $image->post_id = $post->id;
           $post->images()->save($image);
@@ -177,6 +183,30 @@ class PostsController extends Controller
         $user->posts()->save($post);
 
       }
+      // if($request->has('files')){
+      //   if($files=$request->file('files')){
+      //     foreach($files as $file => $e){
+      //
+      //     $image = new Image();
+      //     //ファイル名取得
+      //     $filename = $user->id."_".$nowtime."_".$e['image']->getClientOriginalName();
+      //     // storage/app/publicにファイルを保存する
+      //     // $request->file('file')->store('public');
+      //     // Image::make($file)->save(public_path( 'storage/' . $filename ));
+      //     $e['image']->storeAs('public',$filename);
+      //     // $image->post_id = $post->id;
+      //     $image->file_name= $filename;
+      //     $image->path = '/storage/'.$filename;
+      //     $post->path = '/storage/'.$filename;
+      //
+      //     $image->post_id = $post->id;
+      //     $post->images()->save($image);
+      //     }
+      //   }
+      //
+      //   $user->posts()->save($post);
+      //
+      // }
       return view('posts.show')->with('post',$post);
     }
 

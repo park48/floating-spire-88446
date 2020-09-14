@@ -14,7 +14,7 @@
           <ul class="slide">
             @forelse ($post->images as $image)
               <li class="item">
-                <a href="#"><img src="{{$image->path}}" alt=""/></a>
+                <a href="#"><img src="data:image/png;base64,{{$image->binary}}" alt=""/></a>
               </li>
             @empty
               写真はまだありません。

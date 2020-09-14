@@ -18,7 +18,7 @@
       Team.comについて
     </div>
       <br>
-      日々映像制作に関わられるみなさん、お疲れ様です。このサイトの管理人です。<br>
+      日々映像制作に関わられるみなさん、お疲れ様です。<br>
       映像制作には大変なことがたくさんあるかと思います。私も経験者の一人です。<br>
       それを少しでも軽くできないかと思い、映像制作に関わる情報をみんなで共有するサイトを作りました。<br>
       たくさんある映像制作チームが情報を共有して、一つのチームの様になれる様にとTeam.comと名付けました。<br>
@@ -36,34 +36,34 @@
       <div class="row o-3column">
         <div class="col-md-4">
           <h2 class="about-website">お役立ちサイトまとめ</h2>
-          <p class="about-image"><img src="/images/webpage.jpeg" class="column-image"></p>
+          <p class="about-image"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents("images/webpage.jpeg")) }}" class="column-image"></p>
             撮影スタジオ、オーディション会場、レンタカー屋さんなど、制作者がよく使うサイトをまとめます。
         </div>
         <div class="col-md-4">
           <h2>ロケ地情報掲示板</h2>
-          <p class="about-image"><img src="/images/city.jpeg" class="column-image"></p>
+          <p class="about-image"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents("images/city.jpeg")) }}" class="column-image"></p>
             一般にはあまり公開していないが、ロケ地に利用された実績がある場所など、
             できる限り共有する掲示板を作ります。
         </div>
         <div class="col-md-4">
           <h2>制作便利グッズ紹介</h2>
-          <p class="about-image"><img src="/images/toolbox.jpeg" class="column-image"></p>
+          <p class="about-image"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents("images/toolbox.jpeg")) }}" class="column-image"></p>
             定番のものからあると便利な珍しいグッズの情報を紹介していきます。
         </div>
         <div class="col-md-4">
           <h2>連絡・共有ツール</h2>
-          <p class="about-image"><img src="/images/cloud.jpeg" class="column-image"></p>
+          <p class="about-image"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents("images/cloud.jpeg")) }}" class="column-image"></p>
             制作者はスタッフ・キャストへたくさんの情報を共有する必要があります。
             情報共有に便利な最新のツールを紹介していきます。
         </div>
         <div class="col-md-4">
           <h2>スタジオ情報</h2>
-          <p class="about-image"><img src="/images/eisyaki.jpeg" class="column-image"></p>
+          <p class="about-image"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents("images/eisyaki.jpeg")) }}" class="column-image"></p>
             映像でよく使われる定番のスタジオ情報をまとめます。
         </div>
         <div class="col-md-4">
           <h2 class="about-database">制作ファイルデータベース</h2>
-          <p class="about-image"><img src="images/database.jpeg" class="column-image database-image"></p>
+          <p class="about-image"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents("images/database.jpeg")) }}" class="column-image database-image"></p>
             制作マニュアルや、香盤表、ロケ地一覧、宿泊表などの様々なテンプレートを用意します。
         </div>
 

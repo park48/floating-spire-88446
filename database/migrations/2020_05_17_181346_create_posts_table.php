@@ -21,6 +21,8 @@ class CreatePostsTable extends Migration
             ->nullable();
             $table->text('path')->nullable()
                   ->default('/noimage.png');
+            $table->text('binary')->nullable();
+                  // ->default('/noimage.png');
             $table->timestamps();
         });
     }

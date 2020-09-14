@@ -55,7 +55,7 @@
   <table class="images-table" border="1">
         @forelse ($post->images as $image)
               <tr>
-                <td max-width="40"  max-height="40"><img class="post-images" src="{{$image->path}}" ></td>
+                <td max-width="40"  max-height="40"><img class="post-images" src="data:image/png;base64,{{$image->binary}}" ></td>
                 <td width="80%"><a class="post-images-title">{{ $image->file_name }}</a></td>
                 <td width="40">
                   <!-- <div class="posts-buttons"> -->

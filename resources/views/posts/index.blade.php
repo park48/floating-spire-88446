@@ -14,12 +14,12 @@
     <!-- <div class="container"> -->
      <h1>Team.com</h1>
      <h2>映像制作情報共有サイト</h2>
-     <a class="btn btn-primary" href="{{url('/about')}}" role="button">詳しくはこちら »</a>
+     <a class="btn btn-primary" href="{{ url('/about') }}" role="button">詳しくはこちら »</a>
     <!-- </div> -->
   </div>
     <div class="container">
       <div class="menu-bar">
-        <span class="menu-bar-title">投稿一覧変わって</span>
+        <span class="menu-bar-title">ロケ地一覧</span>
         <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
       </div>
           @forelse ($posts as $post)
@@ -28,9 +28,10 @@
                 <div class="col-sm-5">
                   <p class="post-image">
                     @isset($post->path)
-                        <img class="main-image" src="{{$post->path}}" >
+                        <img class="main-image" src="data:image/png;base64,{{$post->binary}}" >
                     @else
-                        <img class="no-image" src="/noimage.png">
+                        <!-- <img class="no-image" src="/noimage.png"> -->
+                        <img class="no-image" src="data:image/png;base64,/noimage.png">
                     @endif
                   </p>
                 </div>

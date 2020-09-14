@@ -18,6 +18,7 @@ class CreateImagesTable extends Migration
             $table->unsignedBigInteger('post_id');
             $table->string('file_name');
             $table->string('path');
+            $table->text('binary')->nullable();
             $table->timestamps();
 
             $table->foreign('post_id')
