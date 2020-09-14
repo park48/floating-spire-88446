@@ -19,7 +19,7 @@
   </div>
     <div class="container">
       <div class="menu-bar">
-        <span class="menu-bar-title">投稿一覧がいいかな？</span>
+        <span class="menu-bar-title">投稿一覧変更</span>
         <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
       </div>
           @forelse ($posts as $post)
