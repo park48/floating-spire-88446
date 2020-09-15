@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'team.com   テストページ')
+@section('title', 'team.com   About')
 
 @section('content')
   <!-- <p class="text-center"><img src="/logo.png" class="logo"></p> -->
@@ -59,7 +59,7 @@
         <div class="col-md-4">
           <h2>スタジオ情報</h2>
           <p class="about-image"><img src="data:image/jpeg;base64,{{ base64_encode(file_get_contents("images/eisyaki.jpeg")) }}" class="column-image"></p>
-            映像でよく使われる定番のスタジオ情報をまとめます。
+            映像でよく使われる定番のスタジオや、意外と知られていない場所までフォローしていきます。
         </div>
         <div class="col-md-4">
           <h2 class="about-database">制作ファイルデータベース</h2>
@@ -70,7 +70,7 @@
       </div>
   </div>
 
-    <script src="/js/main.js"></script>
+    <script src="/js/delete.js"></script>
 
 
 @endsection
