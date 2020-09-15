@@ -24,7 +24,7 @@
           @forelse ($post->images as $image)
             <div class="item">
               <figure class="image">
-                <img src="{{$image->path}}" />
+                <img src="data:image/png;base64,{{$image->binary}}" alt=""/>
               </figure>
             </div>
           @empty

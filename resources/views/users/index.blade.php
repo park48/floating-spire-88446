@@ -9,7 +9,7 @@ team.com
 --}}
 
 @section('content')
-    <h1>
+    <!-- <h1>
       ユーザー一覧
     </h1>
     <ul>
@@ -30,5 +30,5 @@ team.com
       <li>No users yet</li>
       @endforelse
     </ul>
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js"></script> -->
 @endsection

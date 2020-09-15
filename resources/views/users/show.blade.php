@@ -42,7 +42,7 @@ team.com
     </tbody>
     </table>
     @endif
-      <a href="{{ route('users.index') }}" class="alert-link">戻る</a>
+      <a href="{{ url('/') }}" class="alert-link">戻る</a>
       <br>
       <br>
       <br>

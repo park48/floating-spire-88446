@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'team.com  テスト')
+@section('title', 'team.com')
 
 {{--
 @section('title')
