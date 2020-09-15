@@ -57,7 +57,7 @@ team.com
             <div class="col-sm-5">
               <p class="post-image">
                 @if($post->has('images'))
-                    <img class="main-image" src="{{$post->path}}" >
+                    <img class="main-image" src="data:image/jpeg;base64,{{$post->binary}}" >
                 @else
                   no images
                 @endif
