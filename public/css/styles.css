@@ -91,7 +91,8 @@ ul > li {
 
 
 .jumbotron {
-  background:url("/images/film.jpg") center no-repeat;
+  background:url("/images/film.jpg")
+  center no-repeat;
 
   background-size: cover;
   font-size: 14px;
