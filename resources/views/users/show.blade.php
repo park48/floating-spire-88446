@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'team.com ユーザー一覧')
+@section('title', 'team.com マイページ')
 
 {{--
 @section('title')

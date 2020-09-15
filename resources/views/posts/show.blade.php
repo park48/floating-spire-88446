@@ -56,14 +56,18 @@
       <!-- <li><a href="{{ url('/posts',$post->id) }}">{{$post->title}}</a></li> -->
       <li>
         {{ $comment->body }}
-        <a href="#" class="del" data-id="{{ $comment->id }}">[削除]</a>
-        <form method="post"
-        action="{{ action('CommentsController@destroy', [$post, $comment]) }}"
-        id="form_{{ $comment->id }}">
-           {{ csrf_field() }}  <!-- これ何？ -->
-           {{ method_field('delete') }}
-         </form>
-         <!-- action=""は送信先という意味 -->
+        @auth
+          @if(Auth::user()->id == $post->user_id)
+            <a href="#" class="del" data-id="{{ $comment->id }}">[削除]</a>
+            <form method="post"
+            action="{{ action('CommentsController@destroy', [$post, $comment]) }}"
+            id="form_{{ $comment->id }}">
+               {{ csrf_field() }}  <!-- これ何？ -->
+               {{ method_field('delete') }}
+             </form>
+             <!-- action=""は送信先という意味 -->
+           @endif
+         @endauth
       </li>
       @empty
       <li>コメントはまだありません。</li>
