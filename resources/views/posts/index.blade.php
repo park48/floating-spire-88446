@@ -13,7 +13,7 @@
   <div class="jumbotron">
     <!-- <div class="container"> -->
      <h1>Team.com</h1>
-     <h2>映像制作情報共有</h2>
+     <h2>映像制作情報共有サイト</h2>
      <a class="btn btn-primary" href="{{ url('/about') }}" role="button">詳しくはこちら »</a>
     <!-- </div> -->
   </div>
