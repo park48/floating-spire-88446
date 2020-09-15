@@ -93,10 +93,8 @@ ul > li {
 .jumbotron {
   background:url("/images/film.jpg")
   /* background:url("data:image/jpg;base64,{{base64_encode(file_get_contents("images/film.jpg"))}}") */
-
   center no-repeat;
-  /* background:url(https://www.knt.co.jp/holiday/images/zekkei_nature_mv.jpg)
-center no-repeat; */
+
   background-size: cover;
   font-size: 14px;
   text-align: center;
