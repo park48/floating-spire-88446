@@ -92,8 +92,8 @@ ul > li {
 
 .jumbotron {
   background:url("/images/film.jpg")
-  /* background:url("data:image/jpg;base64,{{base64_encode(file_get_contents("images/film.jpg"))}}") */
   center no-repeat;
+  /* background:url("data:image/jpg;base64,{{base64_encode(file_get_contents("images/film.jpg"))}}") */
 
   background-size: cover;
   font-size: 14px;
