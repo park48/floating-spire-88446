@@ -1,11 +1,6 @@
 {
   "name": "Team.com",
   "description": "This app does one little thing, and does it well.",
-  "keywords": [
-    "productivity",
-    "HTML5",
-    "scalpel"
-  ],
   "website": "https://git.heroku.com/taiga-test-j778bpledbpgz1dgxp1.git",
   "repository": "https://github.com/park48/limitless-taiga-32400",
 
@@ -15,19 +10,6 @@
         "php artisan migrate",
         "php artisan --no-ansi key:generate --show"
     },
-  "env": {
-    "WEB_CONCURRENCY": {
-      "description": "The number of processes to run.",
-      "value": "5"
-    }
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "standard-1x"
-    }
-  },
-  "image": "heroku/php",
   "addons": [
     {
       "plan": "heroku-postgresql",
