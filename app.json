@@ -11,7 +11,7 @@
 
   "success_url": "/",
   "scripts": {
-    "postdeploy": "bundle exec rake bootstrap"
+    "postdeploy":  "./myscript.sh"
   },
   "env": {
     "SECRET_TOKEN": {
