@@ -12,8 +12,8 @@
   "success_url": "/",
   "scripts": {
       "postdeploy": {
-        "heroku run php artisan migrate",
-        "heroku config:set APP_KEY=$(php artisan --no-ansi key:generate --show)"
+        "php artisan migrate",
+        "php artisan --no-ansi key:generate --show"
     },
   "env": {
     "SECRET_TOKEN": {
