@@ -10,9 +10,7 @@
   "repository": "https://github.com/park48/limitless-taiga-32400",
 
   "success_url": "/",
-  "scripts": {
-    "postdeploy":  "./myscript.sh"
-  },
+
   "env": {
     "SECRET_TOKEN": {
       "description": "A secret key for verifying the integrity of signed cookies.",
@@ -49,11 +47,5 @@
       "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
     }
   ],
-  "environments": {
-    "test": {
-      "scripts": {
-        "test": "bundle exec rake test"
-      }
-    }
-  }
+  
 }
