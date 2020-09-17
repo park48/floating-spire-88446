@@ -74,7 +74,7 @@ class TaskController extends Controller
 
     public function showEditForm(Folder $folder, Task $task)
   {
-      $this->checkRelation($folder, $task);
+      // $this->checkRelation($folder, $task);
 
       return view('tasks/edit', [
           'task' => $task,
@@ -85,7 +85,7 @@ class TaskController extends Controller
   {
       // 1
       // $task = Task::find($task_id);
-      $this->checkRelation($folder, $task);
+      // $this->checkRelation($folder, $task);
       // 2
       $task->title = $request->title;
       $task->status = $request->status;
