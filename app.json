@@ -7,8 +7,8 @@
   "success_url": "/",
   "scripts": {
       "postdeploy": {
-        "bundle exec php artisan migrate" ,
-        "bundle exec php artisan --no-ansi key:generate --show"
+        "php artisan migrate --force" ,
+        "php artisan --no-ansi key:generate --show"
     },
   "addons": [
     {
