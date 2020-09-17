@@ -7,7 +7,7 @@
   "success_url": "/",
   "scripts": {
       "postdeploy": {
-        "php artisan migrate",
+        "heroku run "php artisan migrate" ",
         "php artisan --no-ansi key:generate --show"
     },
   "addons": [
