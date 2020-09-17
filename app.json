@@ -10,7 +10,9 @@
   "repository": "https://github.com/park48/limitless-taiga-32400",
 
   "success_url": "/",
-
+  "scripts": {
+      "postdeploy": "php artisan migrate"
+    },
   "env": {
     "SECRET_TOKEN": {
       "description": "A secret key for verifying the integrity of signed cookies.",
@@ -27,7 +29,7 @@
       "size": "standard-1x"
     }
   },
-  "image": "heroku/ruby",
+  "image": "heroku/php",
   "addons": [
     {
       "plan": "heroku-postgresql",
@@ -44,7 +46,7 @@
   ],
   "buildpacks": [
     {
-      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+      "url":"heroku/php"
     }
   ],
   "environments": {
