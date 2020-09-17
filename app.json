@@ -6,7 +6,7 @@
     "HTML5",
     "scalpel"
   ],
-  "website": "https://taiga-test-j778bpledbpgz1dgxp1.herokuapp.com/",
+  "website": "https://git.heroku.com/taiga-test-j778bpledbpgz1dgxp1.git",
   "repository": "https://github.com/park48/limitless-taiga-32400",
 
   "success_url": "/",
