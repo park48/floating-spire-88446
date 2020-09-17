@@ -30,7 +30,7 @@
     </div>
       <br>
     <div class="about-title">
-      準備中コンテンツ...
+      準備中コンテンツ....
     </div>
 
       <div class="row o-3column">
