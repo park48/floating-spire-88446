@@ -16,10 +16,6 @@
         "php artisan --no-ansi key:generate --show"
     },
   "env": {
-    "SECRET_TOKEN": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
-      "generator": "secret"
-    },
     "WEB_CONCURRENCY": {
       "description": "The number of processes to run.",
       "value": "5"
@@ -50,12 +46,6 @@
     {
       "url":"heroku/php"
     }
-  ],
-  "environments": {
-    "test": {
-      "scripts": {
-        "test": "bundle exec rake test"
-      }
-    }
-  }
+  ]
+
 }
