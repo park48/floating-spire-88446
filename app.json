@@ -7,9 +7,10 @@
   "success_url": "/",
   "scripts": {
       "postdeploy": {
-        "php artisan migrate --force",
+        "php artisan migrate --force" ,
         "php artisan --no-ansi key:generate --show"
-    },
+      },
+  }
   "addons": [
     {
       "plan": "heroku-postgresql",
