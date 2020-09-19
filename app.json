@@ -7,8 +7,7 @@
   "success_url": "/",
   "scripts": {
       "postdeploy": {
-        "php artisan migrate",
-        "pg_dump $STG_DATABASE_URL | psql $DATABASE_URL"
+        "php artisan migrate"
     },
     "scripts": {
     },
@@ -43,7 +42,7 @@
     "web": {
       "quantity": 1
     }
-  }
+  },
 
 
 }
