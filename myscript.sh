@@ -1,5 +1,4 @@
 #!/bin/sh
 
-bundle exec rake db:migrate
-bundle exec rake db:seed
-bundle exec my_sample:load
+php artisan migrate
+pg_dump $STG_DATABASE_URL | psql $DATABASE_URL

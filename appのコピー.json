@@ -5,8 +5,10 @@
   "repository": "https://github.com/park48/limitless-taiga-32400",
   "success_url": "/",
   "scripts": {
-      "postdeploy": { "./myscript.sh"
-      }
+      "postdeploy": [
+        "php artisan migrate",
+        "pg_dump $STG_DATABASE_URL | psql $DATABASE_URL"
+      ]
   },
   "addons": [
     {
