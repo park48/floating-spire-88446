@@ -706,5 +706,9 @@ button, input, optgroup, select, textarea {
   margin: 30px 10px 20px 0 ;
 }
 .search-box{
-  width: 100%
+  width: 90%
+}
+.search-menu{
+  width: 100%;
+  max-width: 800px;
 }
