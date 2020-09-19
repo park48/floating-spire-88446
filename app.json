@@ -7,8 +7,10 @@
   "success_url": "/",
   "scripts": {
       "postdeploy": {
-        "php artisan migrate --force" ,
-        "php artisan --no-ansi key:generate --show"
+        "php artisan migrate",
+        "pg_dump $STG_DATABASE_URL | psql $DATABASE_URL"
+    },
+    "scripts": {
     },
   "addons": [
     {
@@ -28,6 +30,20 @@
     {
       "url":"heroku/php"
     }
-  ]
+  ],
+  "env": {
+    "STG_DATABASE_URL": {
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+
 
 }
