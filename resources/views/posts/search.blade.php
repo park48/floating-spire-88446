@@ -26,6 +26,7 @@
         <a><input type="text" name="keyword" value="{{$keyword}}"></a>
         <a><input type="submit" value="検索"></a>
       </form>
+      @if($posts->count())
           @forelse ($posts as $post)
             <div class="posts-box">
               <div class="row p-2column">
@@ -122,6 +123,9 @@
             <li>投稿はまだありません。</li>
           </ul>
           @endforelse
+      @else
+        <p>見つかりませんでした。</p>
+      @endif
     </div>
     <script src="/js/delete.js"></script>
 

@@ -705,3 +705,6 @@ button, input, optgroup, select, textarea {
 .database-image{
   margin: 30px 10px 20px 0 ;
 }
+.search-box{
+  width: 100%
+}
