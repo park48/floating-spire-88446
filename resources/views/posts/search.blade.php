@@ -19,7 +19,7 @@
   </div>
     <div class="container">
       <div class="menu-bar">
-        <span class="menu-bar-title">投稿一覧</span>
+        <span class="menu-bar-title">検索結果</span>
         <form action="{{ url('/posts/search') }}" method="GET">
           <p><input type="text" name="keyword" value="{{$keyword}}"></p>
           <p><input type="submit" value="検索"></p>

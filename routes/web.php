@@ -16,6 +16,9 @@ Route::get('/', 'PostsController@index');
 Route::get('/about', 'PostsController@about');
 Route::get('/posts/{post}' , 'PostsController@show')
       ->where('post','[0-9]+')->name('posts.show');
+Route::get('/posts/search' , 'PostsController@search')
+      ->name('posts.search');
+
 
 
 

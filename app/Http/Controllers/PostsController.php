@@ -216,11 +216,30 @@ class PostsController extends Controller
     }
 
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        $query = Post::query();
+
+        if (!empty($keyword)) {
+            $query->where('title', 'LIKE', "%{$keyword}%")
+                ->orWhere('body', 'LIKE', "%{$keyword}%")
+                ->orWhere('address', 'LIKE', "%{$keyword}%");
+        }
+
+        $posts = $query->get();
+
+        return view('post.search', compact('books', 'keyword', 'stock'));
+    }
+
+
+
 
     protected function validator(array $data)
     {
         return Validator::make($data, [
-          'title' => 'required|min:3',
+          'title' => 'required|min:2',
           'address' => 'required',
           'body' => 'required'
         ], [], [
