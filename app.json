@@ -5,8 +5,7 @@
   "repository": "https://github.com/park48/limitless-taiga-32400",
   "success_url": "/",
   "scripts": {
-      "postdeploy": { "./myscript.sh"
-      }
+      "postdeploy": "./myscript.sh"
   },
   "addons": [
     {
