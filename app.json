@@ -3,13 +3,12 @@
   "description": "This app does one little thing, and does it well.",
   "website": "https://git.heroku.com/taiga-test-j778bpledbpgz1dgxp1.git",
   "repository": "https://github.com/park48/limitless-taiga-32400",
-
   "success_url": "/",
   "scripts": {
       "postdeploy": {
         "php artisan migrate --force"
-      },
-  }
+      }
+  },
   "addons": [
     {
       "plan": "heroku-postgresql",
@@ -29,5 +28,4 @@
       "url":"heroku/php"
     }
   ]
-
 }
