@@ -5,9 +5,7 @@
   "repository": "https://github.com/park48/limitless-taiga-32400",
   "success_url": "/",
   "scripts": {
-      "postdeploy": {
-        "php artisan migrate --force"
-      }
+      "postdeploy": "php artisan migrate --force"
   },
   "addons": [
     {
