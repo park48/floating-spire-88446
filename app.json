@@ -25,5 +25,18 @@
     {
       "url":"heroku/php"
     }
-  ]
+  ],
+  "env": {
+    "STG_DATABASE_URL": {
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  }
 }
