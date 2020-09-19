@@ -230,7 +230,7 @@ class PostsController extends Controller
 
         $posts = $query->get();
 
-        return view('post.search', compact('posts', 'keyword'));
+        return view('posts.search', compact('posts', 'keyword'));
     }
 
 
