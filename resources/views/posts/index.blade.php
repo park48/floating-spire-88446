@@ -27,7 +27,7 @@
           <a><input class="search-box"type="text" name="keyword" ></a>
           <a><input type="submit" value="検索"></a>
         </form>
-      <div/>
+      </div>
           @forelse ($posts as $post)
             <div class="posts-box">
               <div class="row p-2column">
