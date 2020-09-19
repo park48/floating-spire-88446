@@ -19,13 +19,13 @@
   </div>
     <div class="container">
       <div class="menu-bar">
-        <span class="menu-bar-title">投稿一覧</span>
-        <form action="{{ url('/posts/search') }}" method="GET">
-          <p><input type="text" name="keyword" ></p>
-          <p><input type="submit" value="検索"></p>
-        </form>
+        <p class="menu-bar-title">投稿一覧</p>
         <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
       </div>
+      <form action="{{ url('/posts/search') }}" method="GET">
+        <p><input type="text" name="keyword" ></p>
+        <a><input type="submit" value="検索"></a>
+      </form>
           @forelse ($posts as $post)
             <div class="posts-box">
               <div class="row p-2column">

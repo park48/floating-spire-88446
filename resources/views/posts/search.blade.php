@@ -26,6 +26,14 @@
         </form>
         <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
       </div>
+      <div class="menu-bar">
+        <p class="menu-bar-title">投稿一覧</p>
+        <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
+      </div>
+      <form action="{{ url('/posts/search') }}" method="GET">
+        <p><input type="text" name="keyword" value="{{$keyword}}"></p>
+        <a><input type="submit" value="検索"></a>
+      </form>
           @forelse ($posts as $post)
             <div class="posts-box">
               <div class="row p-2column">
