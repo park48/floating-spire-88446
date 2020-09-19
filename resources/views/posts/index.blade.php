@@ -21,7 +21,7 @@
       <div class="search-menu">
         <!-- <a class="search-menu-title"></a> -->
         <form action="{{ url('/posts/search') }}" method="GET">
-          <a　class="search-box"><input type="text" name="keyword" ></a>
+          <a　class="search-box"><input type="text" name="keyword"></a>
           <a><input type="submit" value="検索"></a>
         </form>
       </div>
