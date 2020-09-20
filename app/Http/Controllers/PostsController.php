@@ -241,11 +241,11 @@ class PostsController extends Controller
             return view('posts.search', compact('posts', 'keyword'));
             // compact(   ,    )は引数を配列で出力する。
 
-        // }else{
-        //
-        //     $posts = NULL;
-        //
-        //     return view('posts.search', compact('posts','keyword'));
+        }else{
+
+            $posts = NULL;
+
+            return view('posts.search', compact('posts','keyword'));
 
         }
 
