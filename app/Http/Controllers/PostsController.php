@@ -221,16 +221,20 @@ class PostsController extends Controller
         $keyword = $request->input('keyword');
 
         $query = Post::query();
-        $user= User::find($query->user_id);
-        $user_name = $user->name;
+
+        $user_id = User::where('user_name','LIKE',"%{$keyword}%")->id;
 
         if (!empty($keyword)) {
             $query->where('title', 'LIKE', "%{$keyword}%")
                 ->orWhere('body', 'LIKE', "%{$keyword}%")
                 ->orWhere('address', 'LIKE', "%{$keyword}%");
-                ->orWhere('$user_name', 'LIKE', "%{$keyword}%");
+                ->orWhere('user_id', 'LIKE', "%{$user_id}%");
+                // ->orWhere('$user_name', 'LIKE', "%{$keyword}%");
                 // usernameで検索させたいが、{{ $user_name }}がエラーがでる。
                 // unexpected -> のエラーが出る
+                User::find(name->$keyword)
+
+
         }
 
         $posts = $query->get();
