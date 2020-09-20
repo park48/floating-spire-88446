@@ -35,7 +35,7 @@
               <div class="row p-2column">
                 <div class="col-sm-5">
                   <p class="post-image">
-                    @isset($post->path)
+                    @isset($post->binary)
                         <img class="main-image" src="data:image/jpeg;base64,{{$post->binary}}" >
                     @else
                         <!-- <img class="no-image" src="/noimage.png"> -->
