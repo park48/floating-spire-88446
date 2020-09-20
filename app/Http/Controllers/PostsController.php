@@ -225,8 +225,10 @@ class PostsController extends Controller
 
         if (!empty($keyword)) {
 
-            $user = User::where('name','LIKE',"%{$keyword}%")->first();
-            $user_id = $user->id;
+            $user = User::Where('name','LIKE',"%{$keyword}%")->first();
+            if($user){
+              $user_id = $user->id;
+            }
 
             $query->where('title', 'LIKE', "%{$keyword}%")
                 ->orWhere('body', 'LIKE', "%{$keyword}%")
