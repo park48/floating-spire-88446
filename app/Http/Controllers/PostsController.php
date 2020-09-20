@@ -228,6 +228,7 @@ class PostsController extends Controller
 
 
         if (!empty($keyword)) {
+
             $user = User::where('name','LIKE',"%{$keyword}%")->first();
             $user_id = $user->id;
 
@@ -240,10 +241,11 @@ class PostsController extends Controller
             $posts = $query->get();
 
             return view('posts.search', compact('posts', 'keyword'));
+            // compact(   ,    )は引数を配列で出力する。
 
         }else{
 
-          return view('posts.search', compact('keyword'));
+            return view('posts.search', compact('keyword'));
 
         }
 
