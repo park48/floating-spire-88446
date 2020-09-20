@@ -235,9 +235,10 @@ class PostsController extends Controller
                 ->orWhere('user_id', 'LIKE', "%{$user_id}%");
                 // ->orWhere('{{ $user_name }}', 'LIKE', "%{$keyword}%");
 
+                $posts = $query->get();
+
         }
 
-        $posts = $query->get();
 
         return view('posts.search', compact('posts', 'keyword'));
     }
