@@ -720,5 +720,7 @@ button, input, optgroup, select, textarea {
 .search-menu{
   width: 100%;
   max-width: 800px;
-  margin: 40px auto;
+  margin: 60px auto 20px auto;
+  text-align: center;
+
 }
