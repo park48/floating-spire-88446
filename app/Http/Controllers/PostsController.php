@@ -232,8 +232,6 @@ class PostsController extends Controller
                 // ->orWhere('$user_name', 'LIKE', "%{$keyword}%");
                 // usernameで検索させたいが、{{ $user_name }}がエラーがでる。
                 // unexpected -> のエラーが出る
-                User::find(name->$keyword)
-
 
         }
 
