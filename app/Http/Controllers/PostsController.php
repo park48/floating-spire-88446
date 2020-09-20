@@ -243,7 +243,7 @@ class PostsController extends Controller
 
         }else{
 
-            $posts = NULL;
+            $posts->count() = 0;
 
             return view('posts.search', compact('posts','keyword'));
 
