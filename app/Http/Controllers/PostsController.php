@@ -225,7 +225,7 @@ class PostsController extends Controller
         $query = Post::query();
         // $user= User::find($query->user_id);
         // $user_name = $user->name;
-        $user = User::where('name','LIKE',"%{$keyword}%")->first()->get();
+        $user = User::where('name','LIKE',"%{$keyword}%")->first();
         $user_id = $user->id;
 
         if (!empty($keyword)) {
