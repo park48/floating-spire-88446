@@ -227,7 +227,7 @@ class PostsController extends Controller
         if (!empty($keyword)) {
             $query->where('title', 'LIKE', "%{$keyword}%")
                 ->orWhere('body', 'LIKE', "%{$keyword}%")
-                ->orWhere('address', 'LIKE', "%{$keyword}%");
+                ->orWhere('address', 'LIKE', "%{$keyword}%")
                 ->orWhere('user_id', 'LIKE', "%{$user_id}%");
                 // ->orWhere('$user_name', 'LIKE', "%{$keyword}%");
                 // usernameで検索させたいが、{{ $user_name }}がエラーがでる。
