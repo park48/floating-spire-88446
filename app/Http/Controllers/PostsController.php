@@ -228,7 +228,9 @@ class PostsController extends Controller
             $query->where('title', 'LIKE', "%{$keyword}%")
                 ->orWhere('body', 'LIKE', "%{$keyword}%")
                 ->orWhere('address', 'LIKE', "%{$keyword}%");
-                ->orWhere('{{ $user_name }}', 'LIKE', "%{$keyword}%");
+                ->orWhere('$user_name', 'LIKE', "%{$keyword}%");
+                // usernameで検索させたいが、{{ $user_name }}がエラーがでる。
+                // unexpected -> のエラーが出る
         }
 
         $posts = $query->get();
