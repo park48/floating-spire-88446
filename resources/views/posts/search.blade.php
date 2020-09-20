@@ -31,7 +31,7 @@
         <a class="menu-bar-title">検索結果</a>
         <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
       </div>
-      @if($posts->count())
+      @if($posts != Null)
           @forelse ($posts as $post)
             <div class="posts-box">
               <div class="row p-2column">
