@@ -86,11 +86,12 @@ class PostsController extends Controller
           //ファイル名取得
           $image->binary = base64_encode(file_get_contents($e['image']->getRealPath()));
           $filename = $user->id."_".$nowtime."_".$e['image']->getClientOriginalName();
-          $filename_edit = $e['image']->getClientOriginalName();
+            // $filename_edit = $e['image']->getClientOriginalName();
           // storage/app/publicにファイルを保存する
           // $request->file('file')->store('public');
           // Image::make($file)->save(public_path( 'storage/' . $filename ));
           $e['image']->storeAs('public',$filename);
+            // $e['image']->storeAs('public',$filename_edit);
           // $image->post_id = $post->id;
           $image->file_name= $filename;
           $image->path = '/storage/'.$filename;
@@ -222,17 +223,17 @@ class PostsController extends Controller
         $keyword = $request->input('keyword');
 
         $query = Post::query();
-        // $user= User::find($query->user_id);
-        // $user_name = $user->name;
-        $user = User::where('user_name','LIKE',"%{$keyword}%");
-        $user_id = $user->id;
+        $user= User::find($query->user_id);
+        $user_name = $user->name;
+        // $user = User::where('user_name','LIKE',"%{$keyword}%")->get();
+        // $user_id = $user->id;
 
         if (!empty($keyword)) {
             $query->where('title', 'LIKE', "%{$keyword}%")
                 ->orWhere('body', 'LIKE', "%{$keyword}%")
                 ->orWhere('address', 'LIKE', "%{$keyword}%")
-                ->orWhere('user_id', 'LIKE', "%{$user_id}%");
-                // ->orWhere('$user_name', 'LIKE', "%{$keyword}%");
+                // ->orWhere('user_id', 'LIKE', "%{$user_id}%");
+                ->orWhere('{{ $user_name }}', 'LIKE', "%{$keyword}%");
                 // usernameで検索させたいが、{{ $user_name }}がエラーがでる。
                 // unexpected -> のエラーが出る
 

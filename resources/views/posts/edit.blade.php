@@ -56,7 +56,7 @@
         @forelse ($post->images as $image)
               <tr>
                 <td max-width="40"  max-height="40"><img class="post-images" src="data:image/png;base64,{{$image->binary}}" ></td>
-                <td width="80%"><a class="post-images-title">{{ $filename_edit }}</a></td>
+                <td width="80%"><a class="post-images-title">{{ $image->file_name }}</a></td>
                 <td width="40">
                   <!-- <div class="posts-buttons"> -->
                   @if(Auth::user()->id == $post->user_id)
