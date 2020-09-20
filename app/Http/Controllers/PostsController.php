@@ -221,8 +221,10 @@ class PostsController extends Controller
         $keyword = $request->input('keyword');
 
         $query = Post::query();
-
-        $user_id = User::where('user_name','LIKE',"%{$keyword}%")->id;
+        // $user= User::find($query->user_id);
+        // $user_name = $user->name;
+        $user = User::where('user_name','LIKE',"%{$keyword}%");
+        $user_id = $user->id;
 
         if (!empty($keyword)) {
             $query->where('title', 'LIKE', "%{$keyword}%")
@@ -232,6 +234,7 @@ class PostsController extends Controller
                 // ->orWhere('$user_name', 'LIKE', "%{$keyword}%");
                 // usernameで検索させたいが、{{ $user_name }}がエラーがでる。
                 // unexpected -> のエラーが出る
+
 
         }
 
