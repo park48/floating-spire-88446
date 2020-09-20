@@ -221,9 +221,7 @@ class PostsController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-
         $query = Post::query();
-
 
         if (!empty($keyword)) {
 
@@ -235,15 +233,22 @@ class PostsController extends Controller
                 ->orWhere('address', 'LIKE', "%{$keyword}%")
                 ->orWhere('user_id', 'LIKE', "%{$user_id}%");
 
+            // if($query == NULL){
+            //
+            //   $posts = $query->get();
+            //
+            // }else{
 
-            $posts = $query->get();
+              $posts = $query->get();
+
+            // }
 
             return view('posts.search', compact('posts', 'keyword'));
             // compact(   ,    )は引数を配列で出力する。
 
         }else{
 
-            $posts->count() = 0;
+            $posts = $query->get();
 
             return view('posts.search', compact('posts','keyword'));
 
