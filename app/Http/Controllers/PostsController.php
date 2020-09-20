@@ -248,7 +248,7 @@ class PostsController extends Controller
 
         }else{
 
-            $posts = Enpty;
+            $posts = 'Enpty';
 
             return view('posts.search', compact('posts','keyword'));
 
