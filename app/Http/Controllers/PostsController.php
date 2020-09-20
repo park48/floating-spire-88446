@@ -226,25 +226,22 @@ class PostsController extends Controller
         if (!empty($keyword)) {
 
             $user = User::Where('name','LIKE',"%{$keyword}%")->first();
+
             if($user){
               $user_id = $user->id;
-              $query->orWhere('user_id', 'LIKE', "%{$user_id}%");
+              $query->where('title', 'LIKE', "%{$keyword}%")
+                  ->orWhere('body', 'LIKE', "%{$keyword}%")
+                  ->orWhere('address', 'LIKE', "%{$keyword}%")
+                  ->orWhere('user_id', 'LIKE', "%{$user_id}%");
+            }else{
+
+              $query->where('title', 'LIKE', "%{$keyword}%")
+                  ->orWhere('body', 'LIKE', "%{$keyword}%")
+                  ->orWhere('address', 'LIKE', "%{$keyword}%");
+
             }
 
-            $query->where('title', 'LIKE', "%{$keyword}%")
-                ->orWhere('body', 'LIKE', "%{$keyword}%")
-                ->orWhere('address', 'LIKE', "%{$keyword}%");
-
-
-            // if($query == NULL){
-            //
-            //   $posts = $query->get();
-            //
-            // }else{
-
-              $posts = $query->get();
-
-            // }
+            $posts = $query->get();
 
             return view('posts.search', compact('posts', 'keyword'));
             // compact(   ,    )は引数を配列で出力する。
