@@ -223,8 +223,6 @@ class PostsController extends Controller
         $keyword = $request->input('keyword');
 
         $query = Post::query();
-        // $user= User::find($query->user_id);
-        // $user_name = $user->name;
 
 
         if (!empty($keyword)) {
@@ -236,18 +234,18 @@ class PostsController extends Controller
                 ->orWhere('body', 'LIKE', "%{$keyword}%")
                 ->orWhere('address', 'LIKE', "%{$keyword}%")
                 ->orWhere('user_id', 'LIKE', "%{$user_id}%");
-                // ->orWhere('{{ $user_name }}', 'LIKE', "%{$keyword}%");
+
 
             $posts = $query->get();
 
             return view('posts.search', compact('posts', 'keyword'));
             // compact(   ,    )は引数を配列で出力する。
 
-        }else{
-
-            $posts = null();
-
-            return view('posts.search', compact('posts','keyword'));
+        // }else{
+        //
+        //     $posts = NULL;
+        //
+        //     return view('posts.search', compact('posts','keyword'));
 
         }
 

@@ -24,7 +24,7 @@
           <a><input class="search-box"type="text" name="keyword" value="{{$keyword}}"></a>
           <a><input type="submit" value="検索"></a>
         </form>
-        <a class="hit-count">{{ $posts->count() }}件ヒットしました！</a>
+        <a class="hit-count">{{ $posts->count() }}件ヒットしました。</a>
       </div>
 
       <div class="menu-bar">
