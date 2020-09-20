@@ -85,7 +85,7 @@ ul > li {
 
 .menu-bar{
   padding:  5px;
-  /* border-bottom:1px solid #ddd; */
+  border-bottom:1px solid #ddd;
   width: 100%;
   max-width: 800px;
   margin: auto;
