@@ -129,7 +129,7 @@
           </ul>
           @endforelse
       @else
-        <p>見つかりませんでした。</p>
+        <p class="not-found">見つかりませんでした。</p>
       @endif
     </div>
     <script src="/js/delete.js"></script>

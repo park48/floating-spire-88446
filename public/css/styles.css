@@ -726,3 +726,6 @@ button, input, optgroup, select, textarea {
 .hit-count{
   margin-left: 10px;
 }
+.not-found{
+  margin: 10px 0 0 10px;
+}
