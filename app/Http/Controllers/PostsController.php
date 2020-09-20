@@ -248,7 +248,7 @@ class PostsController extends Controller
 
         }else{
 
-            $posts = Null;
+            $posts = $query->get();
 
             return view('posts.search', compact('posts','keyword'));
 
