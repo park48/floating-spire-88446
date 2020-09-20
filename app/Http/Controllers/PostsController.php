@@ -86,6 +86,7 @@ class PostsController extends Controller
           //ファイル名取得
           $image->binary = base64_encode(file_get_contents($e['image']->getRealPath()));
           $filename = $user->id."_".$nowtime."_".$e['image']->getClientOriginalName();
+          $filename_edit = $e['image']->getClientOriginalName();
           // storage/app/publicにファイルを保存する
           // $request->file('file')->store('public');
           // Image::make($file)->save(public_path( 'storage/' . $filename ));
