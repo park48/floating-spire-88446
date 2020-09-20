@@ -13,19 +13,20 @@
   <div class="jumbotron">
     <!-- <div class="container"> -->
      <h1>Team.com</h1>
-     <h2>映像制作情報共有</h2>
+     <h2>映像制作情報共有サイト</h2>
      <a class="btn btn-primary" href="{{ url('/about') }}" role="button">詳しくはこちら »</a>
     <!-- </div> -->
   </div>
-    <div class="container">
+    <div class="container-800">
       <div class="search-menu">
         <!-- <a class="search-menu-title"></a> -->
         <form action="{{ url('/posts/search') }}" method="GET">
           <a><input class="search-box"type="text" name="keyword" value="{{$keyword}}"></a>
           <a><input type="submit" value="検索"></a>
         </form>
+        <a>{{ $posts->count() }}件ヒットしました！</a>
       </div>
-      何件ヒットしました！
+
       <div class="menu-bar">
         <a class="menu-bar-title">投稿一覧</a>
         <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>

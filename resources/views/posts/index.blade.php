@@ -17,7 +17,7 @@
      <a class="btn btn-primary" href="{{ url('/about') }}" role="button">詳しくはこちら »</a>
     <!-- </div> -->
   </div>
-    <div class="container">
+    <div class="container-800">
       <div class="search-menu">
         <!-- <a class="search-menu-title"></a> -->
         <form action="{{ url('/posts/search') }}" method="GET">
