@@ -251,6 +251,7 @@ class PostsController extends Controller
 
         }else{
 
+            $query->where('title', '=', "");
             $posts = $query->get();
 
             return view('posts.search', compact('posts','keyword'));
