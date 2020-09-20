@@ -39,7 +39,8 @@
                         <img class="main-image" src="data:image/jpeg;base64,{{$post->binary}}" >
                     @else
                         <!-- <img class="no-image" src="/noimage.png"> -->
-                        <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents(noimage.png))}}">
+                        <img class="no-image" >
+                        <!-- <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents(noimage.png))}}"> -->
                     @endif
                   </p>
                 </div>
