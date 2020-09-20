@@ -28,7 +28,7 @@
       </div>
 
       <div class="menu-bar">
-        <a class="menu-bar-title">投稿一覧</a>
+        <a class="menu-bar-title">検索結果</a>
         <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
       </div>
       @if($posts->count())
