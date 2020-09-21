@@ -74,8 +74,8 @@ Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
 
 Auth::routes();
 
-Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
-Route::get('login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+Route::get('/login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('/login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 // public function auth()
 //     {
