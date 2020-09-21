@@ -28,6 +28,8 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+    'MY_ENV_ARRAY' => array_map('trim', explode(',', env('VARIABLE_NAME'))),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
