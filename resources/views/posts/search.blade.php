@@ -1,12 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'team.com')
-
-{{--
-@section('title')
-投稿一覧
-@endsection
---}}
+@section('title', 'team.com 検索結果')
 
 @section('content')
   <!-- <p class="text-center"><img src="/logo.png" class="logo"></p> -->
@@ -37,11 +31,11 @@
               <div class="row p-2column">
                 <div class="col-sm-5">
                   <p class="post-image">
-                    @isset($post->path)
+                    @isset($post->binary)
                         <img class="main-image" src="data:image/jpeg;base64,{{$post->binary}}" >
                     @else
                         <!-- <img class="no-image" src="/noimage.png"> -->
-                        <img class="no-image" src="data:image/png;base64,/noimage.png">
+                        <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}">
                     @endif
                   </p>
                 </div>

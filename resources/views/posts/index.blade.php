@@ -2,12 +2,6 @@
 
 @section('title', 'team.com')
 
-{{--
-@section('title')
-投稿一覧
-@endsection
---}}
-
 @section('content')
   <!-- <p class="text-center"><img src="/logo.png" class="logo"></p> -->
   <div class="jumbotron">
@@ -21,6 +15,7 @@
       <div class="search-menu">
         <!-- <a class="search-menu-title"></a> -->
         <form action="{{ url('/posts/search') }}" method="GET">
+          <p>キーワード検索</p>
           <a><input class="search-box"type="text" name="keyword" ></a>
           <a><input type="submit" value="検索"></a>
         </form>
@@ -41,6 +36,8 @@
                         <!-- <img class="no-image" src="/noimage.png"> -->
                         <!-- <img class="no-image" > -->
                         <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}">
+                                                                                          <!-- 絶対パスで書く(./no-image.png)。
+                        /no-image.pngと書くと、index.blade.phpと同じディレクトリにあるという意味になる。これは相対パス。 -->
                     @endif
                   </p>
                 </div>
