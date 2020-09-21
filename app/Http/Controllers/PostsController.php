@@ -221,7 +221,7 @@ class PostsController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-        $query = Post::query()->latest()->get();
+        $query = Post::query();
 
         if (!empty($keyword)) {
 
@@ -241,7 +241,7 @@ class PostsController extends Controller
 
             }
 
-            $posts = $query->get();
+            $posts = $query->latest()->get();
 
             return view('posts.search', compact('posts', 'keyword'));
             // compact(   ,    )は引数を配列で出力する。
@@ -249,7 +249,7 @@ class PostsController extends Controller
         }else{
 
             $query->where('title', '=', "");
-            $posts = $query->get();
+            $posts = $query->latest()->get();
 
             return view('posts.search', compact('posts','keyword'));
 
