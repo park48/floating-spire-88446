@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'team.com')
+@section('title', 'team.com 検索結果')
 
 @section('content')
   <!-- <p class="text-center"><img src="/logo.png" class="logo"></p> -->
@@ -15,16 +15,17 @@
       <div class="search-menu">
         <!-- <a class="search-menu-title"></a> -->
         <form action="{{ url('/posts/search') }}" method="GET">
-          <p>キーワード検索</p>
-          <a><input class="search-box"type="text" name="keyword" ></a>
+          <a><input class="search-box"type="text" name="keyword" value="{{$keyword}}"></a>
           <a><input type="submit" value="検索"></a>
         </form>
-      </div>
-      <div class="menu-bar">
-        <a class="menu-bar-title">投稿一覧</a>
-        <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
+        <a class="hit-count">{{ $posts->count() }}件ヒットしました。</a>
       </div>
 
+      <div class="menu-bar">
+        <a class="menu-bar-title">検索結果</a>
+        <a href="{{ url('/posts/create')}}" class="posts-menu">新規投稿</a>
+      </div>
+      @if($posts->count())
           @forelse ($posts as $post)
             <div class="posts-box">
               <div class="row p-2column">
@@ -34,10 +35,7 @@
                         <img class="main-image" src="data:image/jpeg;base64,{{$post->binary}}" >
                     @else
                         <!-- <img class="no-image" src="/noimage.png"> -->
-                        <!-- <img class="no-image" > -->
                         <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}">
-                                                                                          <!-- 絶対パスで書く(./no-image.png)。
-                        /no-image.pngと書くと、index.blade.phpと同じディレクトリにあるという意味になる。これは相対パス。 -->
                     @endif
                   </p>
                 </div>
@@ -124,6 +122,9 @@
             <li>投稿はまだありません。</li>
           </ul>
           @endforelse
+      @else
+        <p class="not-found">見つかりませんでした。</p>
+      @endif
     </div>
     <script src="/js/delete.js"></script>
 

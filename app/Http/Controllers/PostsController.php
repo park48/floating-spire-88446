@@ -86,10 +86,12 @@ class PostsController extends Controller
           //ファイル名取得
           $image->binary = base64_encode(file_get_contents($e['image']->getRealPath()));
           $filename = $user->id."_".$nowtime."_".$e['image']->getClientOriginalName();
+            // $filename_edit = $e['image']->getClientOriginalName();
           // storage/app/publicにファイルを保存する
           // $request->file('file')->store('public');
           // Image::make($file)->save(public_path( 'storage/' . $filename ));
           $e['image']->storeAs('public',$filename);
+            // $e['image']->storeAs('public',$filename_edit);
           // $image->post_id = $post->id;
           $image->file_name= $filename;
           $image->path = '/storage/'.$filename;
@@ -216,11 +218,52 @@ class PostsController extends Controller
     }
 
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $query = Post::query();
+
+        if (!empty($keyword)) {
+
+            $user = User::Where('name','LIKE',"%{$keyword}%")->first();
+
+            if($user){
+              $user_id = $user->id;
+              $query->where('title', 'LIKE', "%{$keyword}%")
+                  ->orWhere('body', 'LIKE', "%{$keyword}%")
+                  ->orWhere('address', 'LIKE', "%{$keyword}%")
+                  ->orWhere('user_id', 'LIKE', "%{$user_id}%");
+            }else{
+
+              $query->where('title', 'LIKE', "%{$keyword}%")
+                  ->orWhere('body', 'LIKE', "%{$keyword}%")
+                  ->orWhere('address', 'LIKE', "%{$keyword}%");
+
+            }
+
+            $posts = $query->latest()->get();
+
+            return view('posts.search', compact('posts', 'keyword'));
+            // compact(   ,    )は引数を配列で出力する。
+
+        }else{
+
+            $query->where('title', '=', "");
+            $posts = $query->latest()->get();
+
+            return view('posts.search', compact('posts','keyword'));
+
+        }
+
+    }
+
+
+
 
     protected function validator(array $data)
     {
         return Validator::make($data, [
-          'title' => 'required|min:3',
+          'title' => 'required|min:2',
           'address' => 'required',
           'body' => 'required'
         ], [], [
