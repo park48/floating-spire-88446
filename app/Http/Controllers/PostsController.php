@@ -221,7 +221,7 @@ class PostsController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->input('keyword');
-        $query = Post::query();
+        $query = Post::query()->latest()->get();
 
         if (!empty($keyword)) {
 
