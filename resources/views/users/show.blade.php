@@ -2,12 +2,6 @@
 
 @section('title', 'team.com マイページ')
 
-{{--
-@section('title')
-team.com
-@endsection
---}}
-
 @section('content')
 
   <div class="container">
@@ -59,7 +53,7 @@ team.com
                 @if($post->has('images'))
                     <img class="main-image" src="data:image/jpeg;base64,{{$post->binary}}" >
                 @else
-                  no images
+                    <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}">
                 @endif
               </p>
             </div>
