@@ -56,10 +56,10 @@ team.com
           <div class="row p-2column">
             <div class="col-sm-5">
               <p class="post-image">
-                @if($post->has('images'))
+                @if($post->has('binary'))
                     <img class="main-image" src="data:image/jpeg;base64,{{$post->binary}}" >
                 @else
-                  no images
+                    <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}">
                 @endif
               </p>
             </div>
