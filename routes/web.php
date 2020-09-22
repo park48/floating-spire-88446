@@ -16,6 +16,9 @@ Route::get('/', 'PostsController@index');
 Route::get('/about', 'PostsController@about');
 Route::get('/posts/{post}' , 'PostsController@show')
       ->where('post','[0-9]+')->name('posts.show');
+Route::get('/posts/search' , 'PostsController@search')
+      ->name('posts.search');
+
 
 
 
@@ -70,6 +73,9 @@ Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
 });
 
 Auth::routes();
+
+Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('//login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 // public function auth()
 //     {

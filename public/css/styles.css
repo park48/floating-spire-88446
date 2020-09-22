@@ -13,6 +13,13 @@ body{
   padding: 0px 0px;
   /* text-align: center; */
 }
+.container-800 {
+  width: 90%;
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 0px 0px;
+  /* text-align: center; */
+}
 .width-90{
   width: 90%;
   margin: auto;
@@ -78,7 +85,7 @@ ul > li {
 
 .menu-bar{
   padding:  5px;
-  /* border-bottom:1px solid #ddd; */
+  border-bottom:1px solid #ddd;
   width: 100%;
   max-width: 800px;
   margin: auto;
@@ -704,4 +711,21 @@ button, input, optgroup, select, textarea {
 }
 .database-image{
   margin: 30px 10px 20px 0 ;
+}
+.search-box{
+  /* width: 90%; */
+  max-width: 400px;
+  margin-left: 10px;
+}
+.search-menu{
+  width: 100%;
+  max-width: 460px;
+  margin: 60px auto 20px auto;
+  /* text-align: center; */
+}
+.hit-count{
+  margin-left: 10px;
+}
+.not-found{
+  margin: 10px 0 0 25px;
 }
