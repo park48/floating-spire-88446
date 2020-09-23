@@ -39,6 +39,8 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+
+
     public function redirectToGoogle()
     {
         // Google へのリダイレクト
@@ -67,6 +69,78 @@ class LoginController extends Controller
         $user = User::create([
             'name'     => $gUser->name,
             'email'    => $gUser->email,
+            'password' => \Hash::make(uniqid()),
+        ]);
+        return $user;
+    }
+
+
+
+
+    public function redirectToTwitter()
+    {
+        // Twitter へのリダイレクト
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    public function handleTwitterCallback()
+    {
+        // Twitter 認証後の処理
+        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
+        $twUser = Socialite::driver('twitter')->stateless()->user();
+        // dd($twUser);
+        // email が合致するユーザーを取得
+        $user = User::where('email', $twUser->email)->first();
+        // 見つからなければ新しくユーザーを作成
+        if ($user == null) {
+            $user = $this->createUserByTwitter($twUser);
+        }
+        // ログイン処理
+        \Auth::login($user, true);
+        return redirect('/');
+    }
+
+    public function createUserByTwitter($twUser)
+    {
+        $user = User::create([
+            'name'     => $twUser->name,
+            'email'    => $twUser->email,
+            'password' => \Hash::make(uniqid()),
+        ]);
+        return $user;
+    }
+
+
+
+
+    public function redirectToFacebook()
+    {
+        // Facebook へのリダイレクト
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function handleFacebookCallback()
+    {
+        // Facebook 認証後の処理
+        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
+        $fbUser = Socialite::driver('facebook')->stateless()->user();
+        // dd($fbUser);
+        // email が合致するユーザーを取得
+        $user = User::where('email', $fbUser->email)->first();
+        // 見つからなければ新しくユーザーを作成
+        if ($user == null) {
+            $user = $this->createUserByFacebook($fbUser);
+        }
+        // ログイン処理
+        \Auth::login($user, true);
+        return redirect('/');
+    }
+
+    public function createUserByFacebook($fbUser)
+    {
+        $user = User::create([
+            'name'     => $fbUser->name,
+            'email'    => $fbUser->email,
             'password' => \Hash::make(uniqid()),
         ]);
         return $user;
