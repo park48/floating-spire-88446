@@ -36,13 +36,13 @@
       </div>
     </form>
     <br>
-    <div class="form-group row mt-2">
+    <!-- <div class="form-group row mt-2">
       <div class="col-md-8 offset-md-4">
           <a href="{{ url('/login/google') }}" class="btn btn-secondary" role="button">
               Google Login
           </a>
       </div>
-    </div>
+    </div> -->
     <div class="text-center">
       <a href="{{ route('password.request') }}">パスワードの変更はこちらから</a>
     </div>
