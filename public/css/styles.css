@@ -7,14 +7,14 @@ body{
 }
 
 .container {
-  width: 90%;
+  width: 80%;
   max-width: 1039px;
   margin: 0px auto;
   padding: 0px 0px;
   /* text-align: center; */
 }
 .container-800 {
-  width: 90%;
+  width: 80%;
   max-width: 800px;
   margin: 0px auto;
   padding: 0px 0px;
@@ -408,7 +408,6 @@ body {
   left: 0;
   margin: auto;
   max-height: 100%;
-  min-height: 100%;
   max-width: 100%;
 
 }
