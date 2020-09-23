@@ -29,11 +29,11 @@
               </figure>
             </div>
           @empty
-          <div class="item">
+          <!-- <div class="item">
             <figure class="image">
               <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}">
             </figure>
-          </div>
+          </div> -->
           @endforelse
         </div>
       </div>
