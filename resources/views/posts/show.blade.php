@@ -8,7 +8,6 @@
     {{ $post->title }}
   </div>
   <div class="show-body">
-  @if( $post->path )
     <div class="show-image-box">
       <div class="slide-box">
           <ul class="slide">
@@ -17,7 +16,9 @@
                 <a href="#"><img src="data:image/png;base64,{{$image->binary}}" alt=""/></a>
               </li>
             @empty
-              写真はまだありません。
+            <li class="item">
+              <a href="#"><img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}"></a>
+            </li>
             @endforelse
           </ul>
         <div class="slide-navigation">
@@ -28,12 +29,15 @@
               </figure>
             </div>
           @empty
-            写真はまだありません。
+          <div class="item">
+            <figure class="image">
+              <img class="no-image" src="data:image/png;base64,{{base64_encode(file_get_contents('./noimage.png'))}}">
+            </figure>
+          </div>
           @endforelse
         </div>
       </div>
     </div>
-  @endif
   </div>
       <div class="show-text">
         <div class="show-buttons">
