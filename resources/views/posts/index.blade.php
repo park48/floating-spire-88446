@@ -15,7 +15,7 @@
       <div class="search-menu">
         <!-- <a class="search-menu-title"></a> -->
         <form action="{{ url('/posts/search') }}" method="GET">
-          <p>キーワード検索</p>
+          <p>キーワード検索(地名、住所、詳細、投稿者名で検索可)</p>
           <a><input class="search-box"type="text" name="keyword" ></a>
           <a><input type="submit" value="検索"></a>
         </form>
