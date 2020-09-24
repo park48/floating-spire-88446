@@ -50,7 +50,6 @@ class LoginController extends Controller
     public function handleGoogleCallback()
     {
         // Google 認証後の処理
-        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
         $gUser = Socialite::driver('google')->stateless()->user();
         // dd($gUser);
         // email が合致するユーザーを取得
@@ -86,7 +85,6 @@ class LoginController extends Controller
     public function handleTwitterCallback()
     {
         // Twitter 認証後の処理
-        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
         $twUser = Socialite::driver('twitter')->stateless()->user();
         // dd($twUser);
         // email が合致するユーザーを取得
@@ -122,7 +120,6 @@ class LoginController extends Controller
     public function handleFacebookCallback()
     {
         // Facebook 認証後の処理
-        // あとで処理を追加しますが、とりあえず dd() で取得するユーザー情報を確認
         $fbUser = Socialite::driver('facebook')->stateless()->user();
         // dd($fbUser);
         // email が合致するユーザーを取得

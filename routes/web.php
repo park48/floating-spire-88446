@@ -78,20 +78,20 @@ Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
 Route::get('//login/google/callback', 'Auth\LoginController@handleGoogleCallback');
 
 // Auth Google
-Route::get('auth/google', 'Auth\AuthController@GoogleRedirect');
-Route::get('auth/google/callback', 'Auth\AuthController@GoogleCallback');
-Route::get('auth/google/logout', 'Auth\AuthController@getLogout');
+Route::get('login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('//login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+Route::get('login/google/logout', 'Auth\LoginController@getLogout');
 
 
-Route::get('auth/twitter', 'Auth\AuthController@TwitterRedirect');
-Route::get('auth/twitter/callback', 'Auth\AuthController@TwitterCallback');
-Route::get('auth/twitter/logout', 'Auth\AuthController@getLogout');
+Route::get('login/twitter', 'Auth\LoginController@redirectToTwitter');
+Route::get('login/twitter/callback', 'Auth\LoginController@handleTwitterCallback');
+Route::get('login/twitter/logout', 'Auth\LoginController@getLogout');
 
 
 // Auth Facebook
-Route::get('auth/facebook', 'Auth\AuthController@FacebookRedirect');
-Route::get('auth/facebook/callback', 'Auth\AuthController@FacebookCallback');
-Route::get('auth/facebook/logout', 'Auth\AuthController@getLogout');
+Route::get('login/facebook', 'Auth\LoginController@redirectToFacebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
+Route::get('login/facebook/logout', 'Auth\LoginController@getLogout');
 // public function auth()
 //     {
 //         // Authentication Routes...
