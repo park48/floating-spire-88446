@@ -28,9 +28,9 @@ class PostRequest extends FormRequest
       if ($this->isMethod('get')) return [];
 
         return [
-            'title' =>  'required|min:3',
+            'title' =>  'required|min:3|max:50',
             // 'address' =>  'required',
-            'body' => 'required',
+            'body' => 'required|max:2000',
             'files.*.image' => 'image|mimes:jpeg,bmp,png',
         ];
     }

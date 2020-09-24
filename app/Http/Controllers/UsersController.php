@@ -12,9 +12,10 @@ class UsersController extends Controller
     public function index()
     {
       $users = User::latest()->get();
-      
+
       return view('users.index')->with('users',$users);
     }
+    
 
     public function create()
     {
