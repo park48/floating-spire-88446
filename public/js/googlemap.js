@@ -41,9 +41,9 @@
               // content: '<h4>アルサーガパートナーズ</h4>'
               // });
 
-              marker.addListener('click', function() {
-                infoWindow.open(map, marker);
-              });
+              // marker.addListener('click', function() {
+              //   infoWindow.open(map, marker);
+              // });
 
           } else {
             // alert(status);
