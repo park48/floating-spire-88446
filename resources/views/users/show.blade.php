@@ -101,9 +101,11 @@
           </div>
         </div>
       @empty
-      <ul>
-        <li>投稿はまだありません。</li>
-      </ul>
+      <div class="posts-box">
+        <ul>
+          <li>投稿はまだありません。</li>
+        </ul>
+      </div>
       @endforelse
 </div>
 <script src="/js/delete.js"></script>
