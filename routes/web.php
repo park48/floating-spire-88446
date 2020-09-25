@@ -23,7 +23,7 @@ Route::get('/posts/search' , 'PostsController@search')
 
 
 
-      // Route::group(['middleware' => 'auth'], function() {
+      Route::group(['middleware' => 'auth'], function() {
 
 Route::get('/posts/create' , 'PostsController@create');
             //where('post','[0-9]+') postは数字しか許可しないことで、
@@ -71,7 +71,7 @@ Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
     Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
     Route::post('/folders/create', 'FolderController@create');
 
-// });
+});
   // middlewareの終わりここまで
 
 Auth::routes();
