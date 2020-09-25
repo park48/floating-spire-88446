@@ -23,21 +23,21 @@ Route::get('/posts/search' , 'PostsController@search')
 
 
 
-      Route::group(['middleware' => 'auth'], function() {
+      // Route::group(['middleware' => 'auth'], function() {
 
 Route::get('/posts/create' , 'PostsController@create');
             //where('post','[0-9]+') postは数字しか許可しないことで、
             //次の行のcreateが実行される.
 Route::post('/posts' , 'PostsController@store');
 
-    // Route::group(['middleware' => 'can:view,post'], function() {
+    Route::group(['middleware' => 'can:view,post'], function() {
 
 Route::get('/posts/{post}/edit' , 'PostsController@edit');
 Route::patch('/posts/{post}' , 'PostsController@update');
 Route::delete('/posts/{post}' , 'PostsController@destroy');
 Route::delete('/posts/{post}/edit/images/{image}' , 'ImageController@destroy');
 
-  // });
+  });
 
 Route::post('/posts/{post}/comments' , 'CommentsController@store');
 Route::delete('/posts/{post}/comments/{comment}' , 'CommentsController@destroy');
@@ -70,7 +70,9 @@ Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
   // });
     Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
     Route::post('/folders/create', 'FolderController@create');
-});
+
+// });
+  // middlewareの終わりここまで
 
 Auth::routes();
 

@@ -22,7 +22,7 @@ class AuthServiceProvider extends ServiceProvider
         // 'App\Model' => 'App\Policies\ModelPolicy',
         Folder::class => FolderPolicy::class,
         // Folder モデルに対する処理への認可には FolderPolicy ポリシーを使用する、という意味
-        Post::class => PostPolicy::class
+        Post::class => PostPolicy::class,
 
     ];
 
