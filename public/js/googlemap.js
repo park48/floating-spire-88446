@@ -37,9 +37,9 @@
                 map: map
               });
 
-              infoWindow = new google.maps.InfoWindow({
-              content: '<h4>アルサーガパートナーズ</h4>'
-              });
+              // infoWindow = new google.maps.InfoWindow({
+              // content: '<h4>アルサーガパートナーズ</h4>'
+              // });
 
               marker.addListener('click', function() {
                 infoWindow.open(map, marker);
