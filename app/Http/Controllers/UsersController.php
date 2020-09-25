@@ -40,6 +40,10 @@ class UsersController extends Controller
           //$postsの内容をpostsという名前でviewの中で使える。
           ]);
 
+      }else{
+
+        return redirect('/');
+        
       }
 
     }
