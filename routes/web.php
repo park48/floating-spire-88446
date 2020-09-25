@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PostsController@index');
+Route::get('/home', 'PostsController@index');
 // Route::get('/test', 'PostsController@test');
 Route::get('/about', 'PostsController@about');
 Route::get('/posts/{post}' , 'PostsController@show')
@@ -20,59 +21,52 @@ Route::get('/posts/search' , 'PostsController@search')
       ->name('posts.search');
 
 
+Route::group(['middleware' => 'auth'], function() {
 
-
-
-      Route::group(['middleware' => 'auth'], function() {
-
-Route::get('/posts/create' , 'PostsController@create');
-            //where('post','[0-9]+') postは数字しか許可しないことで、
-            //次の行のcreateが実行される.
-Route::post('/posts' , 'PostsController@store');
+    Route::get('/posts/create' , 'PostsController@create');
+                //where('post','[0-9]+') postは数字しか許可しないことで、
+                //次の行のcreateが実行される.
+    Route::post('/posts' , 'PostsController@store');
 
     Route::group(['middleware' => 'can:view,post'], function() {
 
-Route::get('/posts/{post}/edit' , 'PostsController@edit');
-Route::patch('/posts/{post}' , 'PostsController@update');
-Route::delete('/posts/{post}' , 'PostsController@destroy');
-Route::delete('/posts/{post}/edit/images/{image}' , 'ImageController@destroy');
+        Route::get('/posts/{post}/edit' , 'PostsController@edit');
+        Route::patch('/posts/{post}' , 'PostsController@update');
+        Route::delete('/posts/{post}' , 'PostsController@destroy');
+        Route::delete('/posts/{post}/edit/images/{image}' , 'ImageController@destroy');
 
-  });
+    });
 
-Route::post('/posts/{post}/comments' , 'CommentsController@store');
-Route::delete('/posts/{post}/comments/{comment}' , 'CommentsController@destroy');
-// {post},{comment}  {}で各々のidをわたす。
-
-Route::get('/users' , 'UsersController@index')->name('users.index');
-Route::get('/users/signup' , 'UsersController@create');
-// Route::post('/users' , 'UsersController@store');
-Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
-
-  // 下の↓画像のupload機能は練習のためにつけたので、機能はしてない。
-// Route::get('/upload', 'ImageController@input');
-// Route::post('/posts/{post}/upload', 'ImageController@upload');
-// Route::get('/output', 'ImageController@output');
+    Route::post('/posts/{post}/comments' , 'CommentsController@store');
+    Route::delete('/posts/{post}/comments/{comment}' , 'CommentsController@destroy');
+    // {post},{comment}  {}で各々のidをわたす。
 
 
+    Route::group(['middleware' => 'can:view,user'], function() {
+
+        Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
+
+    });
+      // 下の↓画像のupload機能は練習のためにつけたので、機能はしてない。
+    // Route::get('/upload', 'ImageController@input');
+    // Route::post('/posts/{post}/upload', 'ImageController@upload');
+    // Route::get('/output', 'ImageController@output');
 
 
-    Route::get('/home', 'PostsController@index');
-  // Route::get('/home', 'HomeController@index')->name('home');
+    // todoリストの作成             canは folder(URLの変数初分)をviewすることを許可する。
+    Route::group(['middleware' => 'can:view,folder'], function() {
 
-  // todoリストの作成             canは folder(URLの変数初分)をviewすることを許可する。
-  // Route::group(['middleware' => 'can:view,folder'], function() {
-
-    Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
-    Route::get('/folders/{folder}/tasks/create', 'TaskController@showCreateForm')->name('tasks.create');
-    Route::post('/folders/{folder}/tasks/create', 'TaskController@create');
-    Route::get('/folders/{folder}/tasks/{task}/edit', 'TaskController@showEditForm')->name('tasks.edit');
-    Route::post('/folders/{folder}/tasks/{task}/edit', 'TaskController@edit');
-  // });
+        Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
+        Route::get('/folders/{folder}/tasks/create', 'TaskController@showCreateForm')->name('tasks.create');
+        Route::post('/folders/{folder}/tasks/create', 'TaskController@create');
+        Route::get('/folders/{folder}/tasks/{task}/edit', 'TaskController@showEditForm')->name('tasks.edit');
+        Route::post('/folders/{folder}/tasks/{task}/edit', 'TaskController@edit');
+    });
     Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
     Route::post('/folders/create', 'FolderController@create');
 
 });
-  // middlewareの終わりここまで
+  // middleware Authの終わりここまで
 
 Auth::routes();
 

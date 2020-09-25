@@ -15,13 +15,6 @@ class UsersController extends Controller
 
       return view('users.index')->with('users',$users);
     }
-    
-
-    public function create()
-    {
-      return view('users.create');
-    }
-
 
 
     // public function store(UserRequest $request) {

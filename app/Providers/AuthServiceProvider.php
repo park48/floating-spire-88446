@@ -9,6 +9,7 @@ use App\User; // ★ 追加
 use App\Post; // ★ 追加
 use App\Policies\FolderPolicy; // ★ 追加
 use App\Policies\PostPolicy; // ★ 追加
+use App\Policies\UserPolicy; // ★ 追加
 
 
 class AuthServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class AuthServiceProvider extends ServiceProvider
         Folder::class => FolderPolicy::class,
         // Folder モデルに対する処理への認可には FolderPolicy ポリシーを使用する、という意味
         Post::class => PostPolicy::class,
+
+        User::class => UserPolicy::class,
 
     ];
 
