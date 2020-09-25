@@ -7,6 +7,7 @@ use App\User;
 
 
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Auth;
 use App\Policies\UserPolicy; //追加
 use App\Policies; //追加
 
