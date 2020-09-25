@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -31,11 +32,16 @@ class UsersController extends Controller
       $posts = Post::where('user_id',$user->id)->latest()->get();
       // $posts = Post::latest()->user_id()->get();
 
-      return view('users.show',[
-        'posts' => $posts,
-        'user' => $user,
-        //$postsの内容をpostsという名前でviewの中で使える。
-        ]);
+      if($user->id === Auth::user()->id){
+
+        return view('users.show',[
+          'posts' => $posts,
+          'user' => $user,
+          //$postsの内容をpostsという名前でviewの中で使える。
+          ]);
+
+      }
+
     }
 
 }
