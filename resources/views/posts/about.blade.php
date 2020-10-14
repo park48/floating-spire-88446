@@ -8,7 +8,7 @@
     <!-- <div class="container"> -->
      <h1>Team.com</h1>
      <h2 class="about-h2">映像制作情報共有サイト</h2>
-     <a class="btn btn-primary" href="{{ url('/about') }}" role="button">詳しくはこちら »</a>
+     <a class="btn btn-primary" href="{{ url('/about') }}" role="button">詳しくはこちら</a>
     <!-- </div> -->
   </div>
 
