@@ -42,11 +42,9 @@ Route::group(['middleware' => 'auth'], function() {
     // {post},{comment}  {}で各々のidをわたす。
 
 
-    Route::group(['middleware' => 'can:view,user'], function() {
 
-        Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
+    Route::get('/users/{user}' , 'UsersController@show')->name('users.show');
 
-    });
       // 下の↓画像のupload機能は練習のためにつけたので、機能はしてない。
     // Route::get('/upload', 'ImageController@input');
     // Route::post('/posts/{post}/upload', 'ImageController@upload');
